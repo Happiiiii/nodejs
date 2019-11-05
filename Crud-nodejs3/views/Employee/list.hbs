@@ -1,0 +1,45 @@
+<h2 class="text-center">
+    Employee List
+</h2>
+
+<div class="py-3">
+    <a class="btn btn-success" href="/employee">
+    <i class="fa fa-plus"> Create-New</i>
+</a>
+</div>
+
+<table class="table table-striped" style="margin-left: 0px;">
+    <thead class="table table-dark">
+        <tr>
+            {{!-- <th>Id</th> --}}
+            <th >Full Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>City</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {{#each list}}
+        <tr>
+            
+            <td>{{this.fullName}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.mobile}}</td>
+            <td>{{this.city}}</td>
+            <td class="text-center"> 
+               <a href="/employee/{{this._id}}">
+                    <i class="fa fa-pencil "></i>
+               </a>
+            </td>
+            <td class="text-center">
+               <a href="/employee/delete/{{this._id}}" onclick="return confirm('Sure you Want to delete')">
+                    <i class="fa fa-trash"></i>
+               </a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

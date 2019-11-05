@@ -1,0 +1,47 @@
+<!-- custom Form Validation -->
+
+<div class="alert-danger">
+    {{error}}
+</div>
+
+<h2 class="text-center ">{{viewTitle}}</h2>
+
+<form action="/employee" method="POST" autocomplete="off">
+<input type="hidden" name="_id" value="{{employee._id}}">
+   <div class="form-group">
+       <label>Full Name</label>
+       <input type="text" class="form-control" name="fullName" placeholder="Enter Full Name"  value="{{employee.fullName}}" required>
+      <!-- Validation -->
+       <div class="text-danger">
+           {{employee.fullNameError}}
+       </div>
+   </div>
+   <div class="form-group">
+       <label>Email</label>
+       <input type="email" class="form-control" name="email" placeholder="Enter Email-Id" value="{{employee.email}} " required>
+        <!-- Validation -->
+       <div class="text-danger">
+           {{employee.emailError}}
+       </div>
+   </div>
+   <div class="form-row">
+       <div class="col-md-6 form-group">
+            <label>Mobile</label>
+            <input type="text" class="form-control" name="mobile" placeholder="Enter Mobile Number" value="{{employee.mobile}}" required>
+       </div>
+       <div class="col-md-6 form-group">
+            <label>City</label>
+            <input type="text" class="form-control" name="city" placeholder="Enter Your City" value="{{employee.city}}" required>
+       </div>
+   </div>
+   <div class="form-group">
+      <button class="btn btn-primary" type="submit">
+          <i class="fa fa-database"></i>
+          Submit
+      </button>
+      <a href="Employee/list" class="btn btn-danger">
+          <i class="fa fa-list-alt"></i>
+          View-All
+      </a>
+   </div>
+</form>
